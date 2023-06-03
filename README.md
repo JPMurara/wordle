@@ -1,2 +1,3 @@
 # wordle
+
 Wordle game project
