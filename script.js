@@ -1,20 +1,21 @@
 //https://gist.github.com/katharosada/ebb779cf90f26774e6ecf3f8eef4c317
-//Rules
-// 6 attemps to guess a 5-letter word
-// at each guess, a feedback is given by highlighting the letter
-// green means the letter is correct and in the correct position
-// yellow means the letter is correct but in the wrong position
-// grey means the answer is wrong
+
 const btnSubmit = document.getElementById("btn-submit");
 const btnReset = document.getElementById("btn-reset");
 const input = document.getElementById("input");
 const row = document.querySelectorAll(".word");
 const divs = document.querySelectorAll(".letter");
-
+// let answer = validWords[Math.floor(Math.random() * validWords.length) + 1];
+// console.log(answer);
 let rowIndex = 0;
 let attempsCount = 0;
 
-let answer = "WORDS";
+function randomAnswer(validWords) {
+  let answer = validWords[Math.floor(Math.random() * validWords.length) + 1];
+  console.log(answer);
+  return answer; //sends the answer value back to the caller
+}
+let answer = randomAnswer(validWords); //capture the return value (answer) when the fucntion is called and assings it to a variable, so we can use it thourghout the code
 
 btnSubmit.addEventListener("click", isValidGuess);
 btnReset.addEventListener("click", resetGame);
@@ -103,4 +104,5 @@ function resetGame() {
   }
   input.disabled = false;
   btnSubmit.disabled = false;
+  location.reload(); //js method to reload the current URL(location)
 }
