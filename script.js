@@ -46,7 +46,7 @@ function isValidGuess() {
 for (const btn of btnHideMessage) {
   //adds the event listener to all the buttons
   btn.addEventListener("click", (e) => {
-    //hides the dialog html tag by removing the attribute
+    //hides the dialog html tag by removing the attribute from the parent element of the button clicked
     e.target.parentElement.close();
   });
 }

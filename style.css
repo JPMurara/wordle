@@ -75,15 +75,37 @@ border-radius: 5px;
 
 .yellow {
     background-color: #f7da21;
+    transition: background-color 1s;
+    animation: 700ms linear bounce;
 }
 
 .green {
     background-color: #6aaa64;
+    transition: background-color 1s;
+    animation: 700ms linear bounce;
 }
 
-.blur {
-    filter: blur(3px)
+@keyframes bounce {
+    0% {
+        scale: .7
+    }
+    25% {
+        scale: .85
+    }
+    50% {
+        scale: 1.1
+    }
+    75% {
+        scale: 1.2
+    }
+    100% {
+        scale: 1
+    }
 }
+
+
+
+
 
 
 
