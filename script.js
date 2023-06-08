@@ -5,6 +5,12 @@ const btnReset = document.getElementById("btn-reset");
 const input = document.getElementById("input");
 const row = document.querySelectorAll(".word");
 const divs = document.querySelectorAll(".letter");
+const messageInvalidEntry = document.querySelector("#message-invalid-entry");
+const btnHideMessage = document.querySelectorAll(".btn-hide-message");
+const messageGameOver = document.querySelector("#message-game-over");
+const paragraphGameOverMessage = document.querySelector("#p-game-over");
+const messageWin = document.querySelector("#message-win");
+// const keyboard = document.querySelectorAll(".key");
 // let answer = validWords[Math.floor(Math.random() * validWords.length) + 1];
 // console.log(answer);
 let rowIndex = 0;
@@ -20,33 +26,42 @@ let answer = randomAnswer(validWords); //capture the return value (answer) when 
 btnSubmit.addEventListener("click", isValidGuess);
 btnReset.addEventListener("click", resetGame);
 
+// for (let el of keyboard) {
+//   el.addEventListener("click", getLetter);
+// }
+
 function isValidGuess() {
-  if (input.value.includes(" ")) {
-    //donest accept spaces in the input value
-    console.log("Invalid entry. Can't include spaces");
-  } else if (/\d/.test(input.value)) {
-    //doesnt accept numbers in the input value
-    console.log("Invalid entry. Can't include numbers");
+  if (
+    input.value.includes(" ") || //checks spaces
+    /\d/.test(input.value) || //checks if input includes numbers
+    input.value.length !== 5 //checks char numbers
+  ) {
+    messageInvalidEntry.show(); //set the open attribute to the dialog html element. Show message if criteria is not met
+    input.value = "";
   } else {
-    submitGuess();
+    submitGuess(); //otherwise submits the guess
   }
+}
+
+for (const btn of btnHideMessage) {
+  //adds the event listener to all the buttons
+  btn.addEventListener("click", (e) => {
+    //hides the dialog html tag by removing the attribute
+    e.target.parentElement.close();
+  });
 }
 
 function submitGuess() {
   const guess = Array.from(input.value.toUpperCase()); //upper case the guess to make the comparsion with the answer possible, creates an array with each of the guess variable letters
-  if (guess.length === 5) {
-    //check the min length. Doesn't let the player input less than 5 letters word
-    //console.log(guess); //consoles an array with all the letter from the input
-    for (const letterIndex in guess) {
-      //iterates over the indexes of the guess array. The index is used to iterate over the children/divs and the guess array elements
-      //console.log(letterIndex); //consoles the children(div) index from 0 to 4
-      row[rowIndex].children[letterIndex].textContent = guess[letterIndex]; //each div text content is assigned to each of the guess array element(letter)
-    }
-    isValidAttempt(); //checks if the player still have attempts to go
-    checkWord(guess); //calls the function to check each of the letters againts the answer array
-  } else {
-    console.log("The word has to have 5 letters"); //doesnt accepts words less than 5 letters
+  //check the min length. Doesn't let the player input less than 5 letters word
+  //console.log(guess); //consoles an array with all the letter from the input
+  for (const letterIndex in guess) {
+    //iterates over the indexes of the guess array. The index is used to iterate over the children/divs and the guess array elements
+    //console.log(letterIndex); //consoles the children(div) index from 0 to 4
+    row[rowIndex].children[letterIndex].textContent = guess[letterIndex]; //each div text content is assigned to each of the guess array element(letter)
   }
+  isValidAttempt(); //checks if the player still have attempts to go
+  checkWord(guess); //calls the function to check each of the letters againts the answer array
   input.value = "";
   isWin(guess); //pass the input.value to the isWin function
 }
@@ -80,7 +95,8 @@ function isValidAttempt() {
 
 function gameOver() {
   //display the game over message and disable the input and submit button
-  console.log(`Game Over! Better luck next time, the word is: ${answer}`);
+  paragraphGameOverMessage.innerHTML = `Better luck next time, the word is: ${answer}`;
+  messageGameOver.show();
   input.disabled = true;
   btnSubmit.disabled = true;
 }
@@ -88,7 +104,7 @@ function gameOver() {
 function isWin(guess) {
   //checks if the guess matches with the answer, display a message and disable the input and button
   if (answer === guess.join("")) {
-    console.log("Congratulations! You win the game!");
+    messageWin.show();
     input.disabled = true;
     btnSubmit.disabled = true;
   }
@@ -106,3 +122,7 @@ function resetGame() {
   btnSubmit.disabled = false;
   location.reload(); //js method to reload the current URL(location)
 }
+
+// function getLetter(e) {
+//   console.log(e.target.textContent.toUpperCase());
+// }

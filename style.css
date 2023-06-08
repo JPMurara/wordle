@@ -1,11 +1,12 @@
 body {
     background-color: #fefae0;
-    font-family: 'Playfair', serif;
+    font-family: 'Playfair', serif;   
 }
 
 header h1,p {
     margin: 0;
 }
+
 #board-container {
     display: flex;
     justify-content: center;
@@ -20,7 +21,6 @@ header h1,p {
     align-items: center;
     border-radius: 5px;
     background-color: #d5bdaf;
-
 }
 
 .word {
@@ -65,8 +65,13 @@ background-color: #d5bdaf;
 border-radius: 5px;
 }
 
+#keyboard {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center;
 
-
+}
 
 .yellow {
     background-color: #f7da21;
@@ -74,6 +79,10 @@ border-radius: 5px;
 
 .green {
     background-color: #6aaa64;
+}
+
+.blur {
+    filter: blur(3px)
 }
 
 
