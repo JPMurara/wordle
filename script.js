@@ -56,16 +56,17 @@ function submitGuess() {
     //iterates over the indexes of the guess array. The index is used to iterate over the children/divs and the guess array elements
     row[rowIndex].children[letterIndex].textContent = guess[letterIndex]; //each div text content is assigned to each of the guess array element(letter)
   }
-  isValidAttempt(); //checks if the player still have attempts to go
+  isValidAttempt(guess); //checks if the player still have attempts to go
   styleLetters(guess); //calls the function to check each of the letters againts the answer array
   input.value = "";
   isWin(guess); //pass the input.value to the isWin function
 }
 
-function isValidAttempt() {
+function isValidAttempt(guess) {
   //checks if the player still have a valid attempt to play and calls the gameOver function
   attempsCount++;
-  if (attempsCount === 6) {
+  if (attempsCount === 6 && answer !== guess.join("")) {
+    //if the second condition isnt checked, both game over and win message are displayed if the player inputs a correct guess at the very last attempt
     gameOver();
   }
 }
