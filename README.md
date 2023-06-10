@@ -2,7 +2,7 @@
 
 _Wordle_ is a game created by Welsh software engineer **Josh Wardle** released on October 2021. It was bought by the **New York Times Company** in 2022.
 
-Try my Wordle Game [here](https://jpmurara.github.io/wordle/{:target="_blank"})
+Try my Wordle Game [here](https://jpmurara.github.io/wordle/){:target="_blank"}
 _Hint: if you get stuck, check the console for the answer_
 
 ## Rules
