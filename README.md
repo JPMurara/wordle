@@ -1,5 +1,3 @@
-<base target="_blank">
-
 # Wordle Game
 
 _Wordle_ is a game created by Welsh software engineer **Josh Wardle** released on October 2021. It was bought by the **New York Times Company** in 2022.
