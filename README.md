@@ -22,6 +22,6 @@ This is the first project I did during my bootcamp at General Assembly. It is a 
 - A functions perform a check to see if the input matches some rules such as number of characters, spaces or numbers before letting the player submit their guess
 - A for in loop iterates over the guess characters and compares each of them to the answer characters. It sets the text content and the guess appears on the browser individually inside each div
 - The background color is added to each html element by comparing each index of the guess against the characters of the answer
-- ![wordle]([images\Screenshot 2023-06-10 110841.png](https://github.com/JPMurara/wordle/blob/main/images/Screenshot%202023-06-10%20110841.png)) 
+![wordle]([images\Screenshot 2023-06-10 110841.png](https://github.com/JPMurara/wordle/blob/main/images/Screenshot%202023-06-10%20110841.png)) 
 - A win or game over message is displayed
 -
