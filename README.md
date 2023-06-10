@@ -6,9 +6,9 @@ _Wordle_ is a game created by Welsh software engineer **Josh Wardle** released o
 
 - Player has six attempts to guess a five-letter word correctly
 - Feedback is given by changing the letter background color:
-- - Green: letter is in the correct position
-- - Yellow: letter is correct but in the wrong position
-- - Grey: wrong letter
+  - Green: letter is in the correct position
+  - Yellow: letter is correct but in the wrong position
+  - Grey: wrong letter
 
 ## Description
 
