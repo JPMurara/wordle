@@ -1,9 +1,5 @@
 # Wordle Game
 
-<img align="left" alt="HTML5" width="32px" src="https://github.com/JPMurara/JPMurara/blob/main/Logos%20for%20GitHub/html%20logo.png" style="max-width:100%;">  
-<img align="left" alt="JS" width="32px" src="https://github.com/JPMurara/JPMurara/blob/main/Logos%20for%20GitHub/js%20logo.png" style="max-width:100%;">   
-<img align="left" alt="CSS" width="32px" src="https://github.com/JPMurara/JPMurara/blob/main/Logos%20for%20GitHub/CSS3_logo_and_wordmark.svg.png" style="max-width:100%;"> 
-
 _Wordle_ is a game created by Welsh software engineer **Josh Wardle** released on October 2021. It was bought by the **New York Times Company** in 2022.
 
 ## Rules
